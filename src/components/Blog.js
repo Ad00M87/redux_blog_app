@@ -7,12 +7,12 @@ const styles = {
   blog: { cursor: 'pointer' }
 }
 
-const Blog = ({ id, title, recommend, dispatch }) => (
+const Blog = ({ id, title, description, recommend, dispatch }) => (
   <li
     onClick={ () => dispatch(toggleBlog(id)) }
     style={ recommend ? {...styles.recommend, ...styles.blog} : styles.blog }
   >
-    {title}
+    {title} - {description}
   </li>
 )
 

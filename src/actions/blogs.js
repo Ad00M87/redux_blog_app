@@ -5,3 +5,7 @@ export const addBlog = (blog) => {
 export const toggleBlog = (id) => {
   return {type: 'TOGGLE_BLOG', id }
 }
+
+export const deleteBlog = (id) => {
+  return { type: 'DELETE_BLOG', id}
+}

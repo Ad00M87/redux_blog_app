@@ -7,9 +7,9 @@ const viewable = (blogs, currentFilter) => {
   switch(currentFilter) {
     case 'All':
       return blogs;
-    case 'Recommended':
-      return blogs.filter( b => !b.recommend )
     case 'Unrecommended':
+      return blogs.filter( b => !b.recommend )
+    case 'Recommended':
       return blogs.filter( b => b.recommend )
   }
 }
