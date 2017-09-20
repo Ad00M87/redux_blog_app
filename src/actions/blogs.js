@@ -9,3 +9,7 @@ export const toggleBlog = (id) => {
 export const deleteBlog = (id) => {
   return { type: 'DELETE_BLOG', id}
 }
+
+export const editBlog = (id) => {
+  return { type: 'EDIT_BLOG', id}
+}

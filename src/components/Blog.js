@@ -8,12 +8,16 @@ const styles = {
 }
 
 const Blog = ({ id, title, description, recommend, dispatch }) => (
-  <li
-    onClick={ () => dispatch(toggleBlog(id)) }
-    style={ recommend ? {...styles.recommend, ...styles.blog} : styles.blog }
-  >
-    {title} - {description}
-  </li>
+  <div>
+    <li
+      onClick={ () => dispatch(toggleBlog(id)) }
+      style={ recommend ? {...styles.recommend, ...styles.blog} : styles.blog }
+    >
+      {title} - {description}
+    </li>
+    <button>Edit</button>
+    <button>Delete</button>
+  </div>
 )
 
 export default connect()(Blog);

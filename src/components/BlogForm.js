@@ -28,7 +28,7 @@ class BlogForm extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <input value={this.state.title} onChange={this.onChangeT} />
+        <input value={this.state.title} onChange={this.onChangeT} autoFocus />
         <input value={this.state.description} onChange={this.onChangeD} />
         <button type="submit">Add Blog</button>
       </form>
