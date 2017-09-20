@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { incId } from '../actions/nextId';
 import { addBlog } from '../actions/blogs';
+import { Form } from 'semantic-ui-react';
 
 class BlogForm extends React.Component {
   state = { title: '', description: '' }
@@ -27,11 +28,27 @@ class BlogForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input value={this.state.title} onChange={this.onChangeT} autoFocus />
-        <input value={this.state.description} onChange={this.onChangeD} />
-        <button type="submit">Add Blog</button>
-      </form>
+      <Form
+        onSubmit={this.handleSubmit}
+        style={{
+          padding: '10px',
+          background: 'rgb(23, 89, 131)',
+          borderRadius: '15px'
+        }}
+      >
+        <Form.Input
+          value={this.state.title}
+          onChange={this.onChangeT}
+          autoFocus
+          placeholder="Name of Blog"
+        />
+        <Form.TextArea
+          value={this.state.description}
+          onChange={this.onChangeD}
+          placeholder="Description of blog"
+        />
+        <Form.Button type="submit">Add Blog</Form.Button>
+      </Form>
     )
   }
 }

@@ -15,9 +15,11 @@ const viewable = (blogs, currentFilter) => {
 }
 
 const BlogList = ({ blogs, filter }) => (
-  <ul>
-    { viewable(blogs, filter).map( b => <Blog key={b.id} {...b} /> )}
-  </ul>
+  <div>
+    <ol>
+      { viewable(blogs, filter).map( b => <Blog key={b.id} {...b} /> )}
+    </ol>
+  </div>
 )
 
 const mapStateToProps = (state) => {

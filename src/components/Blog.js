@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { toggleBlog } from '../actions/blogs';
 
 const styles = {
-  recommend: { textDecoration: 'underline', color: 'rgb(59, 214, 33)'},
+  recommend: { border: '2px solid rgb(199, 204, 10)', color: 'rgb(214, 98, 33)'},
   blog: { cursor: 'pointer' }
 }
 
@@ -13,8 +13,10 @@ const Blog = ({ id, title, description, recommend, dispatch }) => (
       onClick={ () => dispatch(toggleBlog(id)) }
       style={ recommend ? {...styles.recommend, ...styles.blog} : styles.blog }
     >
-      {title} - {description}
+      <h1>{title}</h1>
+      <p>{description}</p>
     </li>
+    <br />
     <button>Edit</button>
     <button>Delete</button>
   </div>
